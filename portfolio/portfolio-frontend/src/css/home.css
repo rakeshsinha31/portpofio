@@ -1,0 +1,135 @@
+/* Home Page Background */
+.home-container {
+    background: url("../images/bg.jpg") no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    color: #fff;
+    position: relative;
+}
+
+/* Adds a dark overlay for readability */
+.home-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Dark transparent overlay */
+    z-index: 0;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Tile Styling */
+.tile {
+    background: rgba(30, 30, 30, 0.9);
+    /* Semi-transparent background */
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(226, 8, 8, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.tile:hover {
+    transform: translateY(-5px);
+}
+
+/* Profile Tile */
+.profile-tile {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Ensures the image does not overlap the text */
+.profile-image-container {
+    flex-shrink: 0;
+}
+
+.profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f39c12;
+}
+
+/* Text section should take full available space */
+.profile-details {
+    flex-grow: 1;
+}
+
+.profile-details h1 {
+    font-size: 2rem;
+}
+
+.highlight {
+    color: #f39c12;
+}
+
+.btn-primary {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #f39c12;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Experience Tile */
+.experience-tile ul {
+    list-style: none;
+    padding: 0;
+}
+
+.experience-tile li {
+    padding: 5px 0;
+}
+
+/* Skills Tile */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-list span {
+    background: #f39c12;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-tile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+}
