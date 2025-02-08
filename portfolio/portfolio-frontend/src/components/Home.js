@@ -3,7 +3,7 @@
 // src/components/Home.js
 import React from "react";
 import "../css/home.css";
-import profileImg from "../images/profile_pic.jpeg"; // Ensure the image is placed correctly
+import profileImg from "../images/about-img.jpg"; // Ensure the image is placed correctly
 
 
 

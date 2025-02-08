@@ -1,12 +1,7 @@
-# portfolio/urls.py
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import ProjectViewSet, ContactViewSet
+from django.urls import path
+from .views import contact_form
 
-router = DefaultRouter()
-router.register(r'projects', ProjectViewSet)
-router.register(r'contacts', ContactViewSet)
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path("contact/", contact_form, name="contact_form"),  # This makes the full path "/api/contact/"
 ]
